@@ -5,18 +5,19 @@ public class Link {
 	public int iData;
 	public Link next;
 	
-	public Link(int iData, Link next) {
+	public Link(int iData) {
 		
 		this.iData = iData;
-		this.next = next;
+		this.next = null;
 		
 	}
 	
-	public void disPlayLink() {
+	public void displayLink() {
 		
 		System.out.println("iData");
 		
 	}
+	
 	
 
 }

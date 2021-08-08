@@ -4,8 +4,9 @@ public class LinkedList {
 	
 	private Link first;
 
-	public LinkedList(Link next) {
-		this.next = null;
+	public LinkedList(Link first) {
+		
+		this.first = null;
 	}
 	
 	public boolean isEmpty() {
@@ -32,5 +33,34 @@ public class LinkedList {
 		return false;
 	}
 	
+	public void insertFirst(int id) {
+		
+		Link newLink = new Link(id);
+		newLink.next = first;
+		first = newLink;
+		
+	}
+	
+	public void insertMiddle(int key, int id) {
+		
+		Link newLink = new Link(id);
+		
+		Link current = first;
+		
+		while(current != null) {
+			
+			if(current.iData == key) {
+				
+				newLink.next = current.next;
+				current.next = newLink;
+			}
+			else {
+				
+				current = current.next;
+			}
+		}
+		
+		
+	}
 
 }
