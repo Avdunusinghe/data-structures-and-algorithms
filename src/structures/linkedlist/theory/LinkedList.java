@@ -62,5 +62,12 @@ public class LinkedList {
 		
 		
 	}
+	
+	public Link deleteFirst() {
+		
+		Link temp = first;
+		first = first.next;
+		return temp;
+	}
 
 }
