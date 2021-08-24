@@ -68,7 +68,7 @@ public class LinkedList {
 		Link temp = first;
 		first = first.next;
 		return temp;
-		//test query
+		//test querygdfgdf
 	}
 
 }
