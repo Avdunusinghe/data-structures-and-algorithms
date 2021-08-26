@@ -45,6 +45,18 @@ public class Stack {
 		}
 	}
 	
+	//display stack top value
+	public double peek() {
+		
+		if(top == -1) {
+			
+			return -99;
+		}
+		else {
+			
+			return stackArray[top];
+		}
+	}
 	
 	
 	
