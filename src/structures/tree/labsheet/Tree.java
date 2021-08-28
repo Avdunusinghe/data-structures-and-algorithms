@@ -36,7 +36,7 @@ public class Tree {
 					
 					if(current == null) {
 						
-						current.leftChild = newNode;
+						parent.leftChild = newNode;
 						return ;
 					}
 				}
@@ -64,11 +64,11 @@ public class Tree {
 			
 			inOrder(localRoot.leftChild);
 			localRoot.displayNode();
-			inOrder(localRoot.leftChild);	
+			inOrder(localRoot.rigthChild);	
 		}
 		else {
 			
-			System.out.println("The tree is empty");
+			//System.out.println("The tree is empty");
 		}
 		
 	}
@@ -101,4 +101,66 @@ public class Tree {
 		postOrder(localRoot.rigthChild);
 		localRoot.displayNode();
 	}
+	
+	public void TraversePostOrder() {
+		
+		postOrder(root);
+	}
+	
+	private Node findRecursive(Node localRoot, int employeeNumber) {
+		
+		//localroot null (value not found)
+		if(localRoot == null) {
+			System.out.println("Value is not in the tree");
+			return null;
+		}
+		else if(localRoot.employeeNumber == employeeNumber) {
+			
+			System.out.println(localRoot.name);
+			return localRoot;
+		}
+		else if(employeeNumber < localRoot.employeeNumber) {
+			
+			return findRecursive(localRoot.leftChild, employeeNumber);
+		}
+		else {
+			
+			return findRecursive(localRoot.rigthChild, employeeNumber);
+		}
+	}
+	
+	public Node callRecursive(int employeeNumber) {
+		
+		return findRecursive(root,employeeNumber);
+	}
+	
+	public Node find(int employeeNumber) {
+		
+		Node current = root;
+		
+		while(current.employeeNumber != employeeNumber) {
+			
+			if(employeeNumber < current.employeeNumber) {
+				
+				current = current.leftChild;
+			}
+			else {
+				
+				current = current.rigthChild;
+			}
+			if(current == null) {
+				
+				System.out.println("Value is not in the Tree");
+				return null;
+			}
+		}
+		
+		System.out.println(current.name);
+		return current;
+	}
+	
+	public void delteAll() {
+		root = null;
+	}
+
 }
