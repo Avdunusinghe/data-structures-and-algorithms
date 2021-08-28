@@ -9,6 +9,31 @@ public class Tree {
 		this.root = null;
 	}
 	
+	public Node find(int key) {
+		
+		Node current = root;
+		
+		while(current.iData != key) {
+			
+			if(key<current.iData) {
+				
+				current = current.leftNode;
+			}
+			else {
+				
+				current = current.rigthNode;
+				if(current == null) {
+					
+					return null;
+				}
+					
+			}
+		}
+		return current;
+		
+		
+	}
+	
 	public void insert(int id, double value) {
 		
 		Node newNode = new Node();
