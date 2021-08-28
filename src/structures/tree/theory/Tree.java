@@ -9,7 +9,7 @@ public class Tree {
 		this.root = null;
 	}
 	
-	public void inset(int id, double value) {
+	public void insert(int id, double value) {
 		
 		Node newNode = new Node();
 		newNode.iData = id;
