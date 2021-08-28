@@ -36,4 +36,31 @@ public class QueueCircular {
 			}
 		}
 	}
+	
+	public int remove() {
+		
+		
+		if(nItems == 0) {
+			
+			System.out.println("Queue is empty");
+		}
+		else {
+			
+			int temp = queueArray[front++];
+			
+			if(front == maxSize) {
+				
+				front = 0;
+				
+				
+			}
+			
+			nItems--;
+			
+			return temp;
+			
+			
+		}
+		return front;
+	}
 }
